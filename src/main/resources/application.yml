@@ -1,0 +1,32 @@
+server:
+  error:
+    whitelabel:
+      enabled:  false
+
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
+#
+# List of valid headers accepted
+#
+valid:
+  supported_headers:
+    header_names:
+      - Cache-Control
+      - Postman-Token
+      - Content-Length
+      - User-Agent
+      - Accept
+      - Accept-Encoding
+      - host
+      - user-agent
+      - accept
+      - accept-language
+      - accept-encoding
+      - connection
+      - upgrade-insecure-requests
+      - cache-control
+
