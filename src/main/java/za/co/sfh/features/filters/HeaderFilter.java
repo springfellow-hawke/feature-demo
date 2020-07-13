@@ -27,7 +27,7 @@ public class HeaderFilter extends OncePerRequestFilter {
      @Override
      protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
           try {
-               filterUnwantedHeaders(request);
+//               filterUnwantedHeaders(request);
                super.doFilter(request, response, filterChain);
           } catch (InvalidHeaderException iv) {
                response.setStatus(HttpStatus.BAD_REQUEST.value());

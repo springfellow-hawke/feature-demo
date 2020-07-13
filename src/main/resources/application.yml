@@ -2,16 +2,28 @@ server:
   error:
     whitelabel:
       enabled:  false
-
 spring:
   mvc:
     throw-exception-if-no-handler-found: true
   resources:
     add-mappings: false
+  datasource:
+    url: jdbc:mysql://127.0.0.1/features
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
 
-#
-# List of valid headers accepted
-#
+  jpa:
+    show-sql=true:
+    database: mysql
+    properties:
+      hibernate:
+        format_sql=true:#
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: none
+
 valid:
   supported_headers:
     header_names:
@@ -29,4 +41,14 @@ valid:
       - connection
       - upgrade-insecure-requests
       - cache-control
-
+#
+logging:
+  level:
+    ROOT: INFO
+    za.co:  DEBUG
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql: trace
